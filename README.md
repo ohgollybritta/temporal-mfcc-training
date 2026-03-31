@@ -1,6 +1,6 @@
 # MFCC Temporal Wake Word Training
 
-Train a custom wake word detector using temporal MFCC features and a GradientBoosting classifier, exported to ONNX for lightweight deployment on edge devices like a Raspberry Pi.
+Train a custom wake word detector using temporal MFCC features and a GradientBoosting classifier, exported to ONNX for lightweight deployment.
 
 ## How it works
 
