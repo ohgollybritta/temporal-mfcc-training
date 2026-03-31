@@ -10,7 +10,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 import warnings
 warnings.filterwarnings('ignore')
 
-BASE = os.environ.get("SAGE_TRAINING_DIR", os.path.dirname(os.path.abspath(__file__)))
+BASE = os.environ.get("TRAINING_DIR", os.path.dirname(os.path.abspath(__file__)))
 random.seed(42)
 
 def hz_to_mel(hz): return 2595.0 * np.log10(1.0 + hz / 700.0)
@@ -191,7 +191,7 @@ amb_sc = np.array(amb_sc)
 print(f"  max={amb_sc.max():.6f} mean={amb_sc.mean():.6f}")
 print(f"  >0.3: {(amb_sc>0.3).sum()}  >0.5: {(amb_sc>0.5).sum()}  >0.9: {(amb_sc>0.9).sum()}")
 
-# Test on recorded negatives (speech that isn't "hey sage")
+# Test on recorded negatives (speech that isn't the wake word)
 print(f"\nSpeech negative test ({len(neg_files)} samples):")
 speech_sc = []
 for f in neg_files:
@@ -206,7 +206,7 @@ from skl2onnx import convert_sklearn
 from skl2onnx.common.data_types import FloatTensorType
 initial_type = [("float_input", FloatTensorType([None, X.shape[1]]))]
 onnx_model = convert_sklearn(clf, initial_types=initial_type)
-out = f"{BASE}/hey_sage_mfcc_v5.onnx"
+out = f"{BASE}/wake_word_mfcc.onnx"
 with open(out, "wb") as f:
     f.write(onnx_model.SerializeToString())
 print(f"\nSaved: {out} ({os.path.getsize(out)/1024:.1f} KB)")
