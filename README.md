@@ -1,6 +1,6 @@
 # MFCC Temporal Wake Word Training
 
-Trains a custom "hey Sage" wake word detector using temporal MFCC features and a GradientBoosting classifier, exported to ONNX for Raspberry Pi deployment.
+Trains a custom wake word detector using temporal MFCC features and a GradientBoosting classifier, exported to ONNX..
 
 ## How it works
 
