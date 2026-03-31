@@ -61,7 +61,7 @@ skl2onnx
 
 ## Training data tips
 
-- Record positive samples through the **same microphone** Sage uses in production (e.g., Jabra SPEAK 510)
-- Record ambient negatives from the **actual deployment room** — TV, kitchen sounds, conversations, pets
+- Record positive samples through the **same microphone**
+- Record ambient negatives from the **actual deployment room** — TV, conversations, pets
 - More ambient negatives = fewer false triggers. 1,000+ ambient clips recommended.
-- Include speech negatives with similar cadence: "hey Google", "hey Siri", names, short phrases
+- Include speech negatives with similar cadence and phonemes.
