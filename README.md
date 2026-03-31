@@ -45,7 +45,7 @@ python3 train_mfcc_temporal.py
 Or point to a different data directory:
 
 ```bash
-SAGE_TRAINING_DIR=/path/to/training/data python3 train_mfcc_temporal.py
+TRAINING_DIR=/path/to/training/data python3 train_mfcc_temporal.py
 ```
 
 Outputs a `.onnx` model file ready for inference with ONNX Runtime on any platform.
